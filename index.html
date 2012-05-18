@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>oomodel</title>
+	
+	<script src="libs/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/jquery.mobile.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/underscore.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="libs/backbone.js" type="text/javascript" charset="utf-8"></script>
+	<script src="routes/routes.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="libs/class-like-lib.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script>
+
+		// function run(){
+		// 	$import(, function(){
+		// 		// alleAutos = [
+		// 		// 							new Auto("VW","Passat").setSitze(5),
+		// 		// 							new Lkw("Robur", "W50" ).setSitze(2).setLadeflaeche(true),
+		// 		// 							new Lkw("Mercedes", "Actras" ).setSitze(3).setLadeflaeche(false),
+		// 		// 							new Auto("Airbus", 300,"Flugzeug").setSitze(155)
+		// 		// 						]
+		// 		// 	
+		// 		// 	
+		// 		// 			for (var i = 0; i <= alleAutos.length-1; i++){
+		// 		// 				var text = document.createTextNode(alleAutos[i].getDescription());
+		// 		// 				var li = document.createElement("li");
+		// 		// 				document.getElementById("Liste").appendChild(li);
+		// 		// 				document.getElementsByTagName("li")[i].appendChild(text);
+		// 		// 	
+		// 		// 			}
+		// 		
+		// 
+		// 	});
+		// 	
+		// 	
+		// }
+		$(document).ready(function () {
+			console.log('document ready');
+			app = new AppRouter();
+			Backbone.history.start();
+		});
+	</script>
+
+</head>
+<body id="oomodel" onload="run();">
+	<ul id="Liste">
+		
+	</ul>
+</body>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  	<script src="js/jquery.js"></script>
+  	<link rel="stylesheet" href="css/qunit.css" type="text/css" media="screen" />
+	<script src="js/jquery.mobile.js" type="text/javascript" charset="utf-8"></script>
+  	<script src="js/backbone.js" type="text/javascript" charset="utf-8"></script>
+  
+	<script type="text/javascript" src="js/qunit.js"></script>
+	<script src="../libs/class-like-lib.js" type="text/javascript" charset="utf-8"></script>
+  	<script>
+
+	  $(document).ready(function(){
+    
+		module("Core");
+
+			var appearedInHead = false;
+		  	$import("../de/vehicel/vehicel.js", function(){
+	
+				test("test import", function() {
+	
+					var head = document.getElementsByTagName('head')[0];
+					var scriptsInHead = head.getElementsByTagName("script");
+				
+					for (var i = 0; i<= scriptsInHead.length-1; i++){
+						if (scriptsInHead[i].src.indexOf("vehicel.js") != -1)
+							appearedInHead = true;
+					}
+
+				  	equal( true, appearedInHead, "passing test" );
+				});
+		
+			});
+			
+			
+
+		
+
+	
+	  });
+  	</script>
+  
+</head>
+<body>
+  <h1 id="qunit-header">QUnit example</h1>
+ <h2 id="qunit-banner"></h2>
+ <div id="qunit-testrunner-toolbar"></div>
+ <h2 id="qunit-userAgent"></h2>
+ <ol id="qunit-tests"></ol>
+ <div id="qunit-fixture">test markup, will be hidden</div>
+</body>
+</html>
