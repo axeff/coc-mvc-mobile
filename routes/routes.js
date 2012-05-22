@@ -2,8 +2,7 @@ var AppRouter = Backbone.Router.extend({
 
     routes:{
         "":"home",
-        "page1":"page1",
-        "page2":"page2"
+        "page1":"page1"
     },
 
     initialize:function () {
@@ -16,8 +15,28 @@ var AppRouter = Backbone.Router.extend({
     },
 
     home:function () {
-        console.log('#home');
-        this.changePage(new HomeView());
+		
+		HomeView = Backbone.View.extend({
+	        initialize: function(){
+				var self = this;
+				$.ajax({
+					url: "views/index.html",
+					success: function(data){
+						console.log(data);
+						$("[data-role='page']").empty();
+						$("[data-role='page']").html(data);
+						
+					
+						var template = _.template( $("#index").html(), {} );
+			            // Load the compiled HTML into the Backbone "el"
+			            self.el.html( template );
+					}
+				});
+	        },
+
+	    });
+		
+        this.changePage(new HomeView({el: $("body")}));
     },
 
     page1:function () {

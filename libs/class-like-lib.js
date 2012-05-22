@@ -18,3 +18,9 @@ $import = function(file, success){
 	
 }
 
+MVCApp = function(){
+ 	
+	app = new AppRouter();
+	Backbone.history.start();
+
+}
